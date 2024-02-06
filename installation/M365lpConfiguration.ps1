@@ -143,7 +143,7 @@ if ($SiteAdmin) {
     Write-Warning "Could not find `"Microsoft 365 learning pathways`" app. Please install in it your app catalog and run this script again."
     break
   }
-  $sitePagesList = Get-PnPList -Identity "Site Pages"
+  $sitePagesList = Get-PnPList -Identity "SitePages"
   if ($null -ne $sitePagesList) {    
     # Delete pages if they exist. Alert user.
     $clv = Get-PnPListItem -List $sitePagesList -Query "<View><Query><Where><Eq><FieldRef Name='FileLeafRef'/><Value Type='Text'>CustomLearningViewer.aspx</Value></Eq></Where></Query></View>"
